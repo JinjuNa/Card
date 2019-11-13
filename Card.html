@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .card{
+            width:120px;
+            height: 150px;
+            background-color: gold;
+            border: 5px solid yellowgreen;
+            float:left;
+            /* display: inline-block; */
+            margin-right: 30px;
+            text-align: center;
+        }
+        .card:hover{
+            background-color: orange;
+        }
+        .card.active{
+            background-color: white;
+        }
+
+        img{
+            width:100px;
+            vertical-align: middle;
+            margin-top:20px;
+        }
+
+        input{
+            display: block;
+            width:120px;
+            height: 50px;
+            font-size: 28px;
+            color:white;
+            background-color: rebeccapurple;
+            border:3px solid black;
+        }
+
+        input:hover{
+            background-color: tomato;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    <div class="card" id="card1"></div>
+    <div class="card" id="card2"></div>
+    <div class="card" id="card3"></div>
+    <div class="card" id="card4"></div>
+
+    <input type="button" value="Replay" onclick="replay()">
+
+    <script>
+
+    var card1 = document.getElementById("card1");
+    var card2 = document.getElementById("card2");
+    var card3 = document.getElementById("card3");
+    var card4 = document.getElementById("card4");
+
+    card1.onclick = function(){
+        card1.innerHTML = "<img src='./image/1.png'>" 
+        card1.classList.add("active")
+    }
+    card2.onclick = function(){
+        card2.innerHTML = "<img src='./image/2.png'>" 
+        card2.classList.add("active")
+    }
+    card3.onclick = function(){
+        card3.innerHTML = "<img src='./image/3.png'>" 
+        card3.classList.add("active")
+    }
+    card4.onclick = function(){
+        card4.innerHTML = "<img src='./image/4.png'>" 
+        card4.classList.add("active")
+    }
+
+    function replay(){
+        card1.innerHTML = '';
+        card2.innerHTML = '';
+        card3.innerHTML = '';
+        card4.innerHTML = '';
+
+        card1.classList.remove("active")
+        card2.classList.remove("active")
+        card3.classList.remove("active")
+        card4.classList.remove("active")
+    }
+
+    
+    </script>
+</body>
+</html>
